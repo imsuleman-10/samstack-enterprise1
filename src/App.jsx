@@ -10,19 +10,21 @@ import NotFound from './pages/NotFound'
 
 const App = () => {
   return (
-    /* h-screen + flex-col: This locks the app to the viewport.
-       overflow-hidden: Prevents the main body from scrolling (we only want the content to scroll).
+    /* min-h-screen: Ensures the app is at least the height of the screen.
+       flex-col: Stacks Nav, Main, and Footer.
     */
-    <div className='h-screen flex flex-col bg-[#020202] text-white overflow-hidden font-sans'>
+    <div className='min-h-screen flex flex-col bg-[#020202] text-white font-sans'>
       
-      {/* 1. Navbar: Height is 80px (h-20) */}
+      {/* 1. Navbar */}
       <Navbar />
-
+<br />
+<br />
+<br />
       {/* 2. Main Content Area: 
-         flex-1: Takes up all available space between Nav and Footer.
-         overflow-y-auto: Only this section scrolls if content is long.
+          flex-1: Pushes the footer down if content is short.
+          No 'overflow-y-auto' here unless you want a scrollbar inside a scrollbar.
       */}
-      <main className='flex-1 overflow-y-auto custom-scrollbar'>
+      <main className='flex-1'>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/contact' element={<Contact />} />
@@ -32,7 +34,8 @@ const App = () => {
         </Routes>
       </main>
 
-      {/* 3. Footer: Height is 80px (h-20) */}
+      {/* 3. Footer: Will stay at the bottom of the viewport on short pages 
+          and stay at the bottom of the document on long pages. */}
       <Footer />
 
     </div>
