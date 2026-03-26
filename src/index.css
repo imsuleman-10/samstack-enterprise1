@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+/* 1. Root Level Optimizations */
+html {
+  /* Fixes the "jumpy" layout when content loads */
+  scrollbar-gutter: stable; 
+  /* Modern smooth scrolling for 'id' anchors */
+  scroll-behavior: smooth;
+  /* Hide for Firefox */
+  scrollbar-width: none;
+  /* Hide for IE/Edge */
+  -ms-overflow-style: none;
+}
+
+body {
+  /* Prevents horizontal layout shifts from animations */
+  overflow-x: hidden;
+  /* Matches our Deep Black UI precisely */
+  background-color: #020202;
+  /* High-end typography rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 2. Target the 'main' container specifically */
+/* This ensures the Nav/Footer remain locked while content flows invisibly */
+.custom-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Opera */
+  width: 0;
+  height: 0;
+}
+
+/* 3. Logic for Professional Layout */
+/* Ensures your App.jsx height logic doesn't create "phantom" space */
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
