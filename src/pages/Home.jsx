@@ -93,7 +93,7 @@ const Home = () => {
             {/* Image visible by default (opacity-20) */}
             <img 
               src={fast}
-              className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500" 
+              className="absolute inset-0 w-full h-full object-cover opacity-55 group-hover:opacity-90 transition-opacity duration-500" 
               alt="Code"
             />
           </div>
@@ -102,7 +102,7 @@ const Home = () => {
           <div className="md:col-span-4 relative bg-[#0a0a0a00] border border-white/5 rounded-[2.5rem] p-10 flex flex-col justify-between hover:border-white/20 transition-all overflow-hidden group">
             <img 
               src={laptop} 
-              className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-30 grayscale-60 transition-all duration-700" 
+              className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 grayscale-50 transition-all duration-700" 
               alt="Tech Background"
             />
             <div className="relative z-10 flex gap-2">
@@ -123,7 +123,7 @@ const Home = () => {
             {/* The Background Image */}
             <img 
               src={lahore}
-              className="absolute inset-0 w-full h-full object-cover opacity-40 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" 
+              className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-70 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" 
               alt="Lahore Tech Hub"
               loading="lazy"
             />
