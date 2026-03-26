@@ -2,8 +2,14 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="h-20 w-full border-t border-white/[0.05] bg-[#020202] px-6 md:px-10 flex items-center justify-between">
-      {/* Operational Status & Copyright */}
+    /* h-20: Fixed height for layout consistency (matches Navbar).
+       w-full: Ensures it spans the entire width.
+       border-t: Subtle separation from the main content.
+       static: Default positioning (not fixed, not absolute).
+    */
+    <footer className="h-20 w-full border-t border-white/[0.05] bg-[#020202] px-6 md:px-10 flex items-center justify-between shrink-0">
+      
+      {/* 1. Status & Branding */}
       <div className="flex items-center gap-4">
         <div className="flex items-center gap-2">
           <span className="relative flex h-2 w-2">
@@ -19,12 +25,34 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Social Links */}
-      <div className="flex gap-6 md:gap-8 text-[10px] font-bold tracking-widest text-gray-400 uppercase">
-         <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-blue-500 transition-colors">GitHub</a>
-         <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-blue-500 transition-colors">LinkedIn</a>
-         <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-blue-500 transition-colors">Instagram</a>
-      </div>
+      {/* 2. Navigation / Social Links */}
+      <nav className="flex gap-6 md:gap-8 text-[10px] font-bold tracking-widest text-gray-400 uppercase">
+         <a 
+           href="https://github.com" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           className="hover:text-blue-500 transition-colors duration-200"
+         >
+           GitHub
+         </a>
+         <a 
+           href="https://linkedin.com" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           className="hover:text-blue-500 transition-colors duration-200"
+         >
+           LinkedIn
+         </a>
+         <a 
+           href="https://instagram.com" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           className="hover:text-blue-500 transition-colors duration-200"
+         >
+           Instagram
+         </a>
+      </nav>
+      
     </footer>
   );
 };
